@@ -17,6 +17,8 @@ services:
     volumes:
       - static_volume:/static
       - media_volume:/media
+    depends_on:
+      - db
   frontend:
     image: yulia605/kittygram_frontend
     command: cp -r /app/build/. /static/
@@ -28,5 +30,8 @@ services:
       #- ./config/nginx/conf.d:/etc/nginx/conf.d
       - static_volume:/static
       - media_volume:/media
+    depends_on:
+      - backend
+      - frontend
     ports:
       - 9000:80
