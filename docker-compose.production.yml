@@ -21,7 +21,7 @@ services:
       - db
   frontend:
     image: yulia605/kittygram_frontend
-    command: cp -r /app/build/. /static/
+    command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
   gateway:
