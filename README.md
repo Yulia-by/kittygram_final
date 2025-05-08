@@ -47,7 +47,7 @@ scp -i path_to_SSH/SSH_name .env \
 ```bash
 location / {
         proxy_set_header Host $http_host;
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:9000;
     }
 ```
 Перезагрузите конфиг Nginx:
