@@ -15,20 +15,20 @@ services:
     image: yulia605/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static/
-      - media:/app/media/
+      - static_volume:/backend_static
+      - media_volume:/app/media
     depends_on:
       - db
   frontend:
     image: yulia605/kittygram_frontend
     command: cp -r /app/build/. /static/
     volumes:
-      - - static:/static
+      - static_volume:/frontend_static
   gateway:
     image: yulia605/kittygram_gateway
     volumes:
-      - static:/staticfiles
-      - media:/media
+      - static_volume:/staticfiles
+      - media_volume:/media
     depends_on:
       - backend
       - frontend
