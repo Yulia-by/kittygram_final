@@ -28,7 +28,7 @@ services:
     image: yulia605/kittygram_gateway
     volumes:
       - static:/static
-      - media:/app/media/
+      - media:/media
     depends_on:
       - backend
       - frontend
